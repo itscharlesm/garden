@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Eight</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;600;700&family=Quicksand:wght@400;500;600&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="icon" type="image/png" href="css/images/logo.png">
+</head>
+
+<body>
+
+    <!-- Developed by GrabCharles -->
+
+    <audio id="bgMusic" src="css/music/bg_music.mp3" loop></audio>
+
+    <!-- Start screen -->
+    <div id="startScreen" class="start-screen">
+        <div class="start-content">
+            <p class="eyebrow">a little garden for us</p>
+            <h1 class="start-title">Eight Months</h1>
+            <p class="start-sub">plant a little memory for every month we've grown</p>
+            <button id="startBtn" class="start-btn">🌱 Begin</button>
+        </div>
+    </div>
+
+    <!-- Garden scene -->
+    <main id="garden" class="garden hidden">
+        <div class="sky">
+            <div class="sun"></div>
+        </div>
+
+        <header class="garden-header">
+            <h1 class="garden-title">Our Little Garden</h1>
+            <p class="garden-sub">tap a pot to grow a memory</p>
+        </header>
+
+        <div class="bed" id="bed">
+            <!-- 8 pots injected by JS -->
+        </div>
+
+        <p class="hint" id="hint">1 of 8 planted</p>
+    </main>
+
+    <!-- Note modal -->
+    <div id="noteOverlay" class="note-overlay hidden">
+        <div class="note-card">
+            <span class="note-month" id="noteMonth">Month 1</span>
+            <p class="note-text" id="noteText"></p>
+            <button id="noteClose" class="note-close">close</button>
+        </div>
+    </div>
+
+    <script src="js/index.js"></script>
+</body>
+
+</html>

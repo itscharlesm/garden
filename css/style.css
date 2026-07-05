@@ -1,0 +1,453 @@
+:root {
+    --sage: #7c9473;
+    --sage-dark: #5d7355;
+    --cream: #fbf7ef;
+    --terracotta: #c97b5a;
+    --terracotta-dark: #a75f42;
+    --rose: #e8a0bf;
+    --gold: #f2c14e;
+    --soil: #5b4636;
+    --soil-dark: #40301f;
+    --ink: #3d3630;
+    --font-display: 'Dancing Script', cursive;
+    --font-body: 'Quicksand', sans-serif;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+html,
+body {
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+    background: var(--cream);
+    font-family: var(--font-body);
+    color: var(--ink);
+    overflow-x: hidden;
+}
+
+.hidden {
+    display: none !important;
+}
+
+/* ---------- Start screen ---------- */
+.start-screen {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: radial-gradient(circle at 50% 30%, #fffdf8 0%, var(--cream) 60%, #f1e9d8 100%);
+    text-align: center;
+    padding: 24px;
+}
+
+.start-content {
+    max-width: 420px;
+}
+
+.eyebrow {
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    font-size: 12px;
+    color: var(--sage-dark);
+    margin: 0 0 8px;
+    font-weight: 600;
+}
+
+.start-title {
+    font-family: var(--font-display);
+    font-weight: 700;
+    font-size: 64px;
+    margin: 0 0 12px;
+    color: var(--terracotta-dark);
+    line-height: 1;
+}
+
+.start-sub {
+    font-size: 16px;
+    color: var(--ink);
+    opacity: 0.75;
+    margin: 0 0 32px;
+}
+
+.start-btn {
+    font-family: var(--font-body);
+    font-weight: 600;
+    font-size: 16px;
+    padding: 14px 32px;
+    border-radius: 999px;
+    border: none;
+    background: var(--sage);
+    color: white;
+    cursor: pointer;
+    box-shadow: 0 8px 20px rgba(93, 115, 85, 0.35);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.start-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 12px 24px rgba(93, 115, 85, 0.4);
+}
+
+.start-btn:active {
+    transform: translateY(0);
+}
+
+/* ---------- Garden scene ---------- */
+.garden {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    padding-bottom: 40px;
+    background: linear-gradient(to bottom, #cfe8f2 0%, #eaf5ec 38%, #eaf5ec 55%, var(--soil) 55%, var(--soil-dark) 100%);
+}
+
+.sky {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 55vh;
+    min-height: 260px;
+    overflow: hidden;
+    pointer-events: none;
+}
+
+.sun {
+    position: absolute;
+    top: 40px;
+    right: 10%;
+    width: 90px;
+    height: 90px;
+    border-radius: 50%;
+    background: radial-gradient(circle, var(--gold) 0%, #f2c14e 60%, rgba(242, 193, 78, 0) 75%);
+    box-shadow: 0 0 60px 20px rgba(242, 193, 78, 0.35);
+    animation: sunPulse 6s ease-in-out infinite;
+}
+
+@keyframes sunPulse {
+
+    0%,
+    100% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.06);
+    }
+}
+
+.garden-header {
+    position: relative;
+    text-align: center;
+    margin-top: 32px;
+    z-index: 2;
+}
+
+.garden-title {
+    font-family: var(--font-display);
+    font-weight: 700;
+    font-size: 42px;
+    color: var(--soil-dark);
+    margin: 0 0 4px;
+}
+
+.garden-sub {
+    font-size: 14px;
+    color: var(--soil-dark);
+    opacity: 0.7;
+    margin: 0;
+}
+
+.hint {
+    position: relative;
+    z-index: 2;
+    font-size: 13px;
+    color: var(--cream);
+    opacity: 0.85;
+    margin-top: 8px;
+    letter-spacing: 0.04em;
+}
+
+/* ---------- Bed of pots ---------- */
+.bed {
+    position: relative;
+    z-index: 2;
+    margin-top: 48px;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 28px 18px;
+    max-width: 720px;
+    width: 100%;
+    padding: 0 20px;
+}
+
+@media (max-width: 560px) {
+    .bed {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+.pot-wrap {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    cursor: pointer;
+    user-select: none;
+    position: relative;
+    height: 190px;
+    justify-content: flex-end;
+}
+
+.pot-wrap.final .pot {
+    background: linear-gradient(180deg, var(--gold) 0%, var(--terracotta-dark) 100%);
+}
+
+.flower-slot {
+    position: relative;
+    width: 60px;
+    height: 120px;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    margin-bottom: -6px;
+}
+
+.stem {
+    position: absolute;
+    bottom: 0;
+    width: 5px;
+    height: 0;
+    background: var(--sage);
+    border-radius: 3px;
+    transform-origin: bottom center;
+    transition: height 0.7s cubic-bezier(.34, 1.56, .64, 1);
+}
+
+.leaf {
+    position: absolute;
+    width: 16px;
+    height: 10px;
+    background: var(--sage);
+    border-radius: 0 100% 0 100%;
+    opacity: 0;
+    transition: opacity 0.4s ease 0.5s, transform 0.4s ease 0.5s;
+}
+
+.leaf.left {
+    bottom: 28px;
+    left: calc(50% - 20px);
+    transform: rotate(20deg) scale(0);
+}
+
+.leaf.right {
+    bottom: 40px;
+    right: calc(50% - 20px);
+    transform: rotate(-20deg) scale(0) scaleX(-1);
+}
+
+.bloom {
+    position: absolute;
+    bottom: 0;
+    width: 46px;
+    height: 46px;
+    opacity: 0;
+    transform: scale(0);
+    transition: transform 0.5s cubic-bezier(.34, 1.56, .64, 1) 0.6s, opacity 0.3s ease 0.6s;
+}
+
+.petal {
+    position: absolute;
+    width: 20px;
+    height: 26px;
+    border-radius: 50% 50% 50% 50%;
+    top: 50%;
+    left: 50%;
+    transform-origin: center 20px;
+    margin: -20px 0 0 -10px;
+}
+
+.bloom .petal:nth-child(1) {
+    transform: rotate(0deg);
+}
+
+.bloom .petal:nth-child(2) {
+    transform: rotate(72deg);
+}
+
+.bloom .petal:nth-child(3) {
+    transform: rotate(144deg);
+}
+
+.bloom .petal:nth-child(4) {
+    transform: rotate(216deg);
+}
+
+.bloom .petal:nth-child(5) {
+    transform: rotate(288deg);
+}
+
+.bloom-center {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 14px;
+    height: 14px;
+    border-radius: 50%;
+    background: var(--gold);
+    transform: translate(-50%, -50%);
+    box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.5) inset;
+}
+
+/* grown state */
+.pot-wrap.grown .stem {
+    height: 62px;
+}
+
+.pot-wrap.grown .leaf {
+    opacity: 1;
+    transform: rotate(20deg) scale(1);
+}
+
+.pot-wrap.grown .leaf.right {
+    transform: rotate(-20deg) scale(1) scaleX(-1);
+}
+
+.pot-wrap.grown .bloom {
+    opacity: 1;
+    transform: scale(1);
+}
+
+.pot {
+    width: 74px;
+    height: 54px;
+    background: linear-gradient(180deg, var(--terracotta) 0%, var(--terracotta-dark) 100%);
+    border-radius: 6px 6px 16px 16px;
+    position: relative;
+    box-shadow: inset 0 -6px 10px rgba(0, 0, 0, 0.15);
+    transition: transform 0.15s ease;
+}
+
+.pot::before {
+    content: '';
+    position: absolute;
+    top: -6px;
+    left: -4px;
+    right: -4px;
+    height: 10px;
+    background: var(--terracotta-dark);
+    border-radius: 4px;
+}
+
+.pot-wrap:not(.grown):hover .pot {
+    transform: translateY(-3px);
+}
+
+.seed-mound {
+    position: absolute;
+    top: -6px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 26px;
+    height: 12px;
+    background: var(--soil-dark);
+    border-radius: 50%;
+    transition: opacity 0.3s ease;
+}
+
+.pot-wrap.grown .seed-mound {
+    opacity: 0;
+}
+
+.month-label {
+    margin-top: 8px;
+    font-size: 12px;
+    font-weight: 600;
+    color: var(--cream);
+    letter-spacing: 0.04em;
+}
+
+/* ---------- Note overlay ---------- */
+.note-overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(64, 48, 31, 0.55);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 10;
+    padding: 20px;
+    animation: fadeIn 0.25s ease;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+.note-card {
+    background: #fffdf8;
+    border-radius: 14px;
+    max-width: 360px;
+    width: 100%;
+    padding: 28px 26px;
+    text-align: center;
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.3);
+    animation: popIn 0.35s cubic-bezier(.34, 1.56, .64, 1);
+    position: relative;
+}
+
+@keyframes popIn {
+    from {
+        transform: scale(0.85);
+        opacity: 0;
+    }
+
+    to {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+.note-month {
+    display: inline-block;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--sage-dark);
+    margin-bottom: 10px;
+}
+
+.note-text {
+    font-family: var(--font-display);
+    font-size: 26px;
+    line-height: 1.4;
+    color: var(--ink);
+    margin: 0 0 20px;
+}
+
+.note-close {
+    font-family: var(--font-body);
+    font-size: 13px;
+    font-weight: 600;
+    border: none;
+    background: var(--sage);
+    color: white;
+    padding: 8px 22px;
+    border-radius: 999px;
+    cursor: pointer;
+}
+
+.note-close:hover {
+    background: var(--sage-dark);
+}
