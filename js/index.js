@@ -3,13 +3,13 @@
 // Keep it short (1-2 sentences) so it fits nicely on the note card.
 // ------------------------------------------------------------------
 const memories = [
-  "Month 1 — the very beginning, and I already knew.",
-  "Month 2 — our first little trip together.",
-  "Month 3 — the day you made me laugh so hard I cried.",
-  "Month 4 — that rainy night we just talked for hours.",
-  "Month 5 — you took care of me when I was sick.",
-  "Month 6 — half a year, and it still feels new.",
-  "Month 7 — the puzzle I made you (you finally solved it!).",
+  "First month with you, happy kaayo ko gi sugot ko nimo basking gi pugos taka. I know this month ga adjust paka kay first relationship pako nimo and dili paka willing mu commit jud ug taman",
+  "Kani na month ga taas na imo salig saako, ga date natag mga lagyo ga byahe natag lagyo ga sleep together nata. And happy kaayo ko gasalig ka saako, don't worry di nako na dauton imo salig. Happy sad ko kay na legal ta saimong side",
+  "Happy kaayo ko na invited nako sa mga family outing ninyo and I'm hoping sunod makasabay sad ka saamo family outing. I really love to introduce you personally to my fam by. Proud ko ikaw akong partner.",
+  "First date nato sa tagum. Nagkinataw anay ta sa you know kay na luya si pony. Tapos nag cine ta daghan tag memories sa 4th month nato pero kaning tagum date ganahan kaayo ko ani.",
+  "Lucky I have you. Happy kaayo ko saimong gifts, feel kaayo nako imong love. Dili ko sanay makadawat ug gifts mao grabe kaayo ko maka react. Thank you sa mga gifts nimo by, basking karon ginahatagan gihapon ko nimo. Ganahan kaayo kotanan saimong gifts.",
+  "Always sa mati atung layo na mga date, don't worry daghan patag date aside sa Mati. Next week hoping na madayun atung Talaingod date. Saligi lng ko by, I know motor ato gamit pero mag ingat ko especially pag naa ka. Wala pakoy car and chopper but don't worry, dalhon takag mga places na nindot kaayo.",
+  "Kani na month sabay sabay tag problema, akong pag overthink, akong violations saimo na nahurt ka and na question nimo imo sarili. Sorry sa tanan by and thank you saimo patience ha? Don't give up on us by, I value you so don't worry I'll be better. I love you.",
   "Eight months with you, and every month we encountered has been my favorite. I'm so blessed to have you by! I'm really looking forward to future months and years with you. I love you so much, my pretty baby iah! 💖",
 ];
 
