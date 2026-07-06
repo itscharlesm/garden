@@ -93,7 +93,8 @@ function updateHint() {
 function showNote(monthNum, text) {
   noteMonth.textContent = monthNum === 8 ? "Eight Months" : `Month ${monthNum}`;
   noteText.textContent = text;
-  notePhoto.src = `css/images/${monthNum}.jpg`;
+  const ext = monthNum === 8 ? "gif" : "jpg";
+  notePhoto.src = `css/images/${monthNum}.${ext}`;
   notePhoto.alt = `Month ${monthNum} photo`;
   noteOverlay.classList.remove("hidden");
 }
