@@ -10,7 +10,7 @@ const memories = [
   "Month 5 — you took care of me when I was sick.",
   "Month 6 — half a year, and it still feels new.",
   "Month 7 — the puzzle I made you (you finally solved it!).",
-  "Eight months with you, and every one has been my favorite.",
+  "Eight months with you, and every month we encountered has been my favorite. I'm so blessed to have you by! I'm really looking forward to future months and years with you. I love you so much, my pretty baby iah! 💖",
 ];
 
 const bgMusic = document.getElementById("bgMusic");
