@@ -102,7 +102,7 @@ html, body {
   align-items: center;
   position: relative;
   padding-bottom: 40px;
-  background: linear-gradient(to bottom, #cfe8f2 0%, #eaf5ec 38%, #eaf5ec 55%, var(--soil) 55%, var(--soil-dark) 100%);
+  background: linear-gradient(to bottom, #cfe8f2 0%, #eaf5ec 18%, #eaf5ec 28%, var(--soil) 28%, var(--soil-dark) 100%);
 }
 
 .sky {
@@ -110,8 +110,8 @@ html, body {
   top: 0;
   left: 0;
   right: 0;
-  height: 55vh;
-  min-height: 260px;
+  height: 28vh;
+  min-height: 180px;
   overflow: hidden;
   pointer-events: none;
 }
@@ -202,7 +202,7 @@ html, body {
 .flower-slot {
   position: relative;
   width: 60px;
-  height: 120px;
+  height: 150px;
   display: flex;
   align-items: flex-end;
   justify-content: center;
@@ -231,13 +231,13 @@ html, body {
 }
 
 .leaf.left {
-  bottom: 28px;
+  bottom: 18px;
   left: calc(50% - 20px);
   transform: rotate(20deg) scale(0);
 }
 
 .leaf.right {
-  bottom: 40px;
+  bottom: 20px;
   right: calc(50% - 20px);
   transform: rotate(-20deg) scale(0) scaleX(-1);
 }
@@ -282,10 +282,10 @@ html, body {
 }
 
 /* grown state */
-.pot-wrap.grown .stem { height: 62px; }
+.pot-wrap.grown .stem { height: 38px; }
 .pot-wrap.grown .leaf { opacity: 1; transform: rotate(20deg) scale(1); }
 .pot-wrap.grown .leaf.right { transform: rotate(-20deg) scale(1) scaleX(-1); }
-.pot-wrap.grown .bloom { opacity: 1; transform: scale(1); }
+.pot-wrap.grown .bloom { opacity: 1; transform: scale(1) translateY(-30px); }
 
 .pot {
   width: 74px;
